@@ -1,0 +1,31 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  jobs:
+    buils:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          user: actions/checkout@v4
+
+        - name: Install Node.js
+          user: actions/setup-node@v4
+          with:
+            node-vesion: 22
+
+        - name: Install Packages
+          run: npm install
+
+        - name: Run Test
+          run: npm test
+
+        - name: Build Project
+          run: npm run build
