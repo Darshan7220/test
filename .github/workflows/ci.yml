@@ -11,7 +11,7 @@ on:
 
   jobs:
     buils:
-      runs-on: ubuntu-latest
+      runs-on: self-hosted
       steps:
         - name: Checkout Repository
           user: actions/checkout@v4
